@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .card.flip {
+    background-color: #fff;
+  }
+  
+  .card.flip::before {
+    content: attr(data-symbol);
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
